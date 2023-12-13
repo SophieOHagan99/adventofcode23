@@ -49,15 +49,14 @@ class Game:
         for game_round in self.rounds:
             if game_round[Colour.RED.value] > min_red:
                 min_red = game_round[Colour.RED.value]
-            elif game_round[Colour.BLUE.value] > min_blue:
+            if game_round[Colour.BLUE.value] > min_blue:
                 min_blue = game_round[Colour.BLUE.value]
-            elif game_round[Colour.GREEN.value] > min_green:
+            if game_round[Colour.GREEN.value] > min_green:
                 min_green = game_round[Colour.GREEN.value]
-        print(min_red, min_blue, min_green)
         return min_red * min_blue * min_green
 
 games = []
-with open("day2/small_sample.txt") as file:
+with open("day2/real_sample.txt") as file:
     for line in file.readlines():
         games.append(Game(line))
 
